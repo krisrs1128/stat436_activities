@@ -1,0 +1,28 @@
+---
+title: "Untitled"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+The data below measures properties of various Antarctic penguins.
+
+```{r, echo = TRUE}
+library(tidyverse)
+theme_set(theme_bw())
+penguins <- read_csv("https://uwmadison.box.com/shared/static/ijh7iipc9ect1jf0z8qa2n3j7dgem1gh.csv")
+```
+Create a single plot that makes it easy to answer both of these questions, (i)
+How is bill length related to bill depth within and across species? (ii) On
+which islands are which species found?
+
+
+```{r}
+ggplot(penguins, aes(bill_depth_mm, bill_length_mm)) +
+    stat_smooth(aes(color = species), method = "lm", se = FALSE) +
+    stat_smooth(method = "lm", se = FALSE, col = "#949494") +
+    geom_point(aes(shape = island, color = species)) 
+
+ggplot(penguins) +
+    geom_point(aes(x = bill_depth_mm, y = bill_length_mm, color = island, shape = species))
+
+```
