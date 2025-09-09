@@ -34,7 +34,7 @@ b. Implement your proposed arrangement from part (a).
 ```{r}
 plants_reshaped <- plants |>
   pivot_longer(starts_with("height")) |>
-  mutate(day = str_extract(name, "[0-9]+"))
+  mutate(day = as.numeric(str_extract(name, "[0-9]+")))
 ```
 
 
