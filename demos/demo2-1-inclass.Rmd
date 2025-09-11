@@ -61,6 +61,7 @@ ggplot(plants_longer, aes(time, height, col = treatment, )) +
     geom_point(size = 5) +
     scale_x_continuous(breaks = c(0, 7, 14, 21)) +
     labs(x = "Time (Days)", y = "Height (cm)", col = "Treatment", title = "Effect of Treatments on Plant Growth") +
+    scale_color_manual(values = c("#f15a5a", "#a8dce8", "#5ca0b0", "#145563")) +
     theme(title = element_text(size = 18))
 
 plants_longer |>
