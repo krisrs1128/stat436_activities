@@ -74,11 +74,11 @@ they support.
 
 _Instructor_
 
-* Kris Sankaran [ksankaran@wisc.edu] 
+* Kris Sankaran [ksankaran@wisc.edu]
 
 _TAs_
 
-* Matt Sathitvudh [sathitvudh@wisc.edu] 
+* Matt Sathitvudh [sathitvudh@wisc.edu]
 
 We will announce in-person and virtual office hours depending on the results of
 the poll on the syllabus. Submit your preferences by **Sunday  at 6pm**.
@@ -115,7 +115,7 @@ the poll on the syllabus. Submit your preferences by **Sunday  at 6pm**.
 There is evidence that while tools like ChatGPT and GitHub Copilot can
 dramatically improve programming productivity&lt;sup&gt;1&lt;/sup&gt;, they can also have
 negative effects on learning&lt;sup&gt;2&lt;/sup&gt;. In this course, we will follow a
-middle path. 
+middle path.
 
 1. Not allowed for in-class activities, exercise sheet homework problems, or written parts of any assignment.
 2. Allowed for group projects and portfolio homework problems.
@@ -146,7 +146,7 @@ More details are given on the syllabus.
 * Make sure you can run the starter code for the in-class demo.
   - I recommend using Rstudio.
   - You can install the tidyverse package using:
-  
+
 
 ``` r
 install.packages("tidyverse")
@@ -201,7 +201,7 @@ can create an HTML or PDF submission.
 
 ### Week 1 Think Tank
 
-Submit a response to the "Week 1 Think Tank" post on Canvas. 
+Submit a response to the "Week 1 Think Tank" post on Canvas.
 
 &gt; In your opinion, what makes a data visualization "good"?
 
@@ -577,7 +577,7 @@ exclude: true
 ### Example Visual Analysis
 
 .pull-left[
-  &lt;img src="figure/oscar_bump.jpg" width=400/&gt; 
+  &lt;img src="figure/oscar_bump.jpg" width=400/&gt;
 ]
 
 .pull-right[
@@ -705,13 +705,13 @@ How does `str_extract` work?
 ---
 
 exclude: true
-### Exercise Review 2 - 1 
+### Exercise Review 2 - 1
 
-The plants demo used a regular expression ("regex") to extract the day number from the column names. 
+The plants demo used a regular expression ("regex") to extract the day number from the column names.
 
 
 ``` r
-str_extract("height.14", "[0-9]") 
+str_extract("height.14", "[0-9]")
 ```
 
 ```
@@ -721,11 +721,11 @@ str_extract("height.14", "[0-9]")
 ---
 
 exclude: true
-### Exercise Review 2 - 1 
+### Exercise Review 2 - 1
 
 
 ``` r
-str_extract("height.14", "[0-9]+") 
+str_extract("height.14", "[0-9]+")
 ```
 
 ```
@@ -735,11 +735,11 @@ str_extract("height.14", "[0-9]+")
 ---
 
 exclude: true
-### Exercise Review 2 - 1 
+### Exercise Review 2 - 1
 
 
 ``` r
-str_extract("height.14.test.21", "[0-9]+") 
+str_extract("height.14.test.21", "[0-9]+")
 ```
 
 ```
@@ -749,11 +749,11 @@ str_extract("height.14.test.21", "[0-9]+")
 ---
 
 exclude: true
-### Exercise Review 2 - 1 
+### Exercise Review 2 - 1
 
 
 ``` r
-str_extract_all("height.14.test.21", "[0-9]+") 
+str_extract_all("height.14.test.21", "[0-9]+")
 ```
 
 ```
@@ -761,7 +761,7 @@ str_extract_all("height.14.test.21", "[0-9]+")
 ## [1] "14" "21"
 ```
 
-Hint: https://regexr.com/ is useful for learning and testing regexes. 
+Hint: https://regexr.com/ is useful for learning and testing regexes.
 
 ---
 
@@ -775,28 +775,28 @@ More details about `starts_with()` and `interaction()`?
 ---
 
 exclude: true
-### Exercise Review 2 - 1 
+### Exercise Review 2 - 1
 
 * `starts_with()` selects any columns that that match a condition. Here, it says which columns to collapse into a new "name" column.
-* `interaction` defines a temporary factor variable that looks at all combinations 
+* `interaction` defines a temporary factor variable that looks at all combinations
 
 
 ``` r
-ggplot(plants_reshaped) + 
-  geom_line(aes(day, value, group = interaction(plantid, treatment), col = treatment)) 
+ggplot(plants_reshaped) +
+  geom_line(aes(day, value, group = interaction(plantid, treatment), col = treatment))
 ```
 
-`group` specifies what each line should correspond to. so here, it corresponds 
-to `plantid x treatment` combinations. 
+`group` specifies what each line should correspond to. so here, it corresponds
+to `plantid x treatment` combinations.
 
 ---
 
 exclude: true
-### Exercise Review 2 - 1 
+### Exercise Review 2 - 1
 
 
 ``` r
-interaction(1:4, c("a", "b", "c")) 
+interaction(1:4, c("a", "b", "c"))
 ```
 
 ```
@@ -894,13 +894,13 @@ head(who)
 
 exclude: true
 
-### Exercise Review 2 - 1 
+### Exercise Review 2 - 1
 
 
 
 
 ``` r
-ggplot(plants_long) + 
+ggplot(plants_long) +
   geom_point(aes(time, height))
 ```
 
@@ -945,10 +945,10 @@ Starter code and solutions on Canvas.
 
 ### Week 2 Self Asessment
 
-Take this time to work through the self-assessment on the Canvas page. 
+Take this time to work through the self-assessment on the Canvas page.
 
-* We will take the highest score of two attempts. 
-* No time limit. 
+* We will take the highest score of two attempts.
+* No time limit.
 * Due Sunday night.
 
 ---
@@ -1309,17 +1309,17 @@ Live Demos: https://go.wisc.edu/83qv4x
 
 ### Week 3 Self Asessment
 
-Take this time to work through the self-assessment on the Canvas page. 
+Take this time to work through the self-assessment on the Canvas page.
 
-* We will take the highest score of two attempts. 
-* No time limit. 
+* We will take the highest score of two attempts.
+* No time limit.
 * Due Sunday night.
 
 ---
 
 ## Week 4 - 1
 
-1. Exercise Review
+1. Visualization Share
 1. In-Class Discussion [4-1]
 1. In-Class Demo [4-1]
 1. Week 4 Think Tank
@@ -1328,7 +1328,9 @@ Take this time to work through the self-assessment on the Canvas page.
 
 ## Announcements
 
+* Grace Periods: Automatically deducted unless you contact us.
 * Upcoming Deadlines
+  - HW2
   - Project Milestone 1
 
 ---
@@ -1345,11 +1347,11 @@ are not the same across facets.
 
 ---
 
-### Exercise Review
+### Note on Free Scales
 
 &lt;img src="figure/facet-box-comparison.png" width="650" style="display: block; margin: auto;" /&gt;
 
-This example is from [https://doi.org/10.1111/cts.12554](https://doi.org/10.1111/cts.12554). 
+This example is from [https://doi.org/10.1111/cts.12554](https://doi.org/10.1111/cts.12554).
 Freeing the `\(y\)`-axis scale has a big effect on the conclusions we draw. Even if
 not misleading, the choice should be considered carefully
 
@@ -1361,7 +1363,7 @@ exclude: true
 _When using the `patchwork` package, two plots `p1` and `p2` can be placed side-by-side using `p1 / p2`._
 
 False: `/` places panels on top of one another. To place them side by side, we
-can use `+`. 
+can use `+`.
 
 ---
 exclude: true
@@ -1401,8 +1403,7 @@ By the end of class today, you should be able to,
 
 * This discussion is a warm-up to interactive visualization.
 * Respond to the prompt on the Canvas Discussion 4 - 1 link.
-* Discuss and answer the prompts with your project group. Include your project
-group number next to your answer.
+* Discuss and answer the prompts with your table. Include your names next to your answer.
 
 Discussion Links: https://go.wisc.edu/7fss4b
 
@@ -1415,6 +1416,8 @@ We will work through [California Wildfires] in the exercises sheet.
 Live Demos: https://go.wisc.edu/83qv4x
 
 ---
+
+exclude: true
 
 ### Example Projects
 
@@ -1452,7 +1455,7 @@ Note that some of these questions are framed as Yes/No, but you can also argue t
 Please respond to the prompt on Canvas.
 
 .center[
-&lt;img src="figure/" width=700/&gt;
+&lt;img src="figure/new_normal.png" width=1000/&gt;
 ]
 
 ---
@@ -1460,16 +1463,30 @@ Please respond to the prompt on Canvas.
 ## Week 4 - 2
 
 1. Visualization Share
+1. Think Tank Review
 1. In-Class Discussion [4 - 2]
-1. In-Class Demo/Exercise [4 - 2]
+1. In-Class Demo [4 - 2]
+1. Week 4 Self Assessment
 
 ---
 
 ### Announcements
 
 * Upcoming Deadlines
-  - HW1
-  - Project Milestone 2
+  - HW2
+  - Project Milestone 1
+
+---
+
+### Think Tank 4 Follow-Up
+
+1. Share your response with your neighbors. What were your main points of disagreement?
+
+1. Ben Shneidermans' information visualization mantra is,
+
+&gt; Overview first, zoom and filter, then details on demand.
+
+How does The New Normal reflect this mantra. How does it depart from it?
 
 ---
 
@@ -1482,25 +1499,23 @@ Discussion Links: https://go.wisc.edu/7fss4b
 
 ---
 
-exclude: true
-
 ### In-Class Exercise/Demo [4 - 2]
 
 We will work through [Interactive German Traffic] in the exercises sheet.
 
 Live Demos: https://go.wisc.edu/83qv4x
 
-At the places where I pause, write your best guesses for the next step. These
-guesses will be the exercise submission for today.
+I will pause at a few places and ask you to make a guess about the next step in
+our earlier discussion page.
 
 ---
 
 ### Week 4 Self Asessment
 
-Take this time to work through the self-assessment on the Canvas page. 
+Take this time to work through the self-assessment on the Canvas page.
 
-* We will take the highest score of two attempts. 
-* No time limit. 
+* We will take the highest score of two attempts.
+* No time limit.
 * Due Sunday night.
 
 ---
@@ -1572,7 +1587,7 @@ can create UI elements that print variables of interest.
 ``` r
 server &lt;- function(input, output) {
   output$debug &lt;- verbatimTextOutput({
-    # intermediate data structure 
+    # intermediate data structure
   })
 }
 ```
@@ -1739,10 +1754,10 @@ We will discuss potential responses in the last 5 minutes of class.
 
 ### Week 5 Self Asessment
 
-Take this time to work through the self-assessment on the Canvas page. 
+Take this time to work through the self-assessment on the Canvas page.
 
-* We will take the highest score of two attempts. 
-* No time limit. 
+* We will take the highest score of two attempts.
+* No time limit.
 * Due Sunday night.
 
 ---
@@ -1761,7 +1776,7 @@ Take this time to work through the self-assessment on the Canvas page.
 1. Upcoming Deadlines
   - Project Milestone 2
   - HW3
-1. The Midterm (in-class). A practice exam and solutions are on Canvas. 
+1. The Midterm (in-class). A practice exam and solutions are on Canvas.
   - Reviewing the online course notes.
   - Sketching solutions to problems from the exercise sheet.
   - Practice under time pressure.
@@ -1832,7 +1847,7 @@ Please respond to the prompt on Canvas.
 1. Upcoming Deadlines
   1. Project Milestone 2
   1. HW3
-1. Midterm (in-class). A practice exam and solutions are on Canvas. 
+1. Midterm (in-class). A practice exam and solutions are on Canvas.
   - Reviewing the online course notes.
   - Sketching solutions to problems from the exercise sheet.
   - Practice under time pressure.
@@ -1861,10 +1876,10 @@ Live Demos: https://go.wisc.edu/83qv4x
 
 ### Week 6 Self Asessment
 
-Take this time to work through the self-assessment on the Canvas page. 
+Take this time to work through the self-assessment on the Canvas page.
 
-* We will take the highest score of two attempts. 
-* No time limit. 
+* We will take the highest score of two attempts.
+* No time limit.
 * Due Sunday night.
 
 ---
@@ -2000,7 +2015,7 @@ exclude: true
 Provide a scatterplot showing the relationship between the number of streams
 of this song in the US and in Canada. Do the same between the US and Japan.
 Briefly comment.
-    
+
 
 ``` r
 songs_wide &lt;- song_ts |&gt;
@@ -2031,7 +2046,7 @@ exclude: true
 Provide a scatterplot showing the relationship between the number of streams
 of this song in the US and in Canada. Do the same between the US and Japan.
 Briefly comment.
-    
+
 
 ``` r
 ggplot(songs_wide) +
@@ -2280,10 +2295,10 @@ By the end of class today, you should be able to,
 
 ### Week 7 Self Asessment
 
-Take this time to work through the self-assessment on the Canvas page. 
+Take this time to work through the self-assessment on the Canvas page.
 
-* We will take the highest score of two attempts. 
-* No time limit. 
+* We will take the highest score of two attempts.
+* No time limit.
 * Due Sunday night.
 
 ---
@@ -2326,7 +2341,7 @@ node properties
 
 ### In-Class Discussion [8 - 1]
 
-Here are four thoughtfully designed network and tree visualizations data that attracted a bit of attention in the data science blogosphere. 
+Here are four thoughtfully designed network and tree visualizations data that attracted a bit of attention in the data science blogosphere.
 
 1. https://truth-and-beauty.net/projects/peakspotting
 1. https://taiwandatastories.com/bubble-tea-guide/
@@ -2435,10 +2450,10 @@ Live Demos: https://go.wisc.edu/83qv4x
 
 ### Week 8 Self Asessment
 
-Take this time to work through the self-assessment on the Canvas page. 
+Take this time to work through the self-assessment on the Canvas page.
 
-* We will take the highest score of two attempts. 
-* No time limit. 
+* We will take the highest score of two attempts.
+* No time limit.
 * Due Sunday night.
 
 ---
@@ -2482,7 +2497,7 @@ Determine visual encodings using data type + prioritization
 For example, if we had a categorical + continuous variable, we could consider:
 
 * `geom_boxplot`: `\(x\)`-axis `\(\to\)` category, `\(y\)`-axis `\(\to\)` continuous value
-* `geom_histogram`: 
+* `geom_histogram`:
   - `\(x\)`-axis `\(\to\)` continuous value, color `\(\to\)` category
   - `\(x\)`-axis `\(\to\)` continuous value, facet `\(\to\)` category
 * `geom_point` or `geom_jitter`: `\(x\)`-axis `\(\to\)` category (with jitter), `\(y\)`-axis `\(\to\)` continuous value
@@ -2497,8 +2512,8 @@ For example, if we had a categorical + continuous variable, we could consider:
 
 ### Visualization Design/Critique
 
-When critiquing, ask: 
-  * Which comparisons are automatic/perceptual? 
+When critiquing, ask:
+  * Which comparisons are automatic/perceptual?
   * Which laborious/require calculation?
 
 &lt;img src="figure/popout.png"/&gt;
@@ -2586,10 +2601,10 @@ Live Demos: https://go.wisc.edu/83qv4x
 
 ### Week 9 Self Asessment
 
-Take this time to work through the self-assessment on the Canvas page. 
+Take this time to work through the self-assessment on the Canvas page.
 
-* We will take the highest score of two attempts. 
-* No time limit. 
+* We will take the highest score of two attempts.
+* No time limit.
 * Due Sunday night.
 
 ---
@@ -2772,10 +2787,10 @@ With your group, submit an answer to [Job Interview] from the exercises sheet.
 
 ### Week 10 Self Asessment
 
-Take this time to work through the self-assessment on the Canvas page. 
+Take this time to work through the self-assessment on the Canvas page.
 
-* We will take the highest score of two attempts. 
-* No time limit. 
+* We will take the highest score of two attempts.
+* No time limit.
 * Due Sunday night.
 
 ---
@@ -3012,10 +3027,10 @@ With your project group, work through [Shniederman's Golden Rules] in the exerci
 
 ### Week 11 Self Asessment
 
-Take this time to work through the self-assessment on the Canvas page. 
+Take this time to work through the self-assessment on the Canvas page.
 
-* We will take the highest score of two attempts. 
-* No time limit. 
+* We will take the highest score of two attempts.
+* No time limit.
 * Due Sunday night.
 
 ---
@@ -3180,7 +3195,7 @@ exclude: true
 
 ### In-Class Exercise [12 - 2]
 
-Respond to [Improving Initial Visualizations] on the exercise sheet. 
+Respond to [Improving Initial Visualizations] on the exercise sheet.
 
 - You will need to redownload it from the Canvas link, since I just added this
 problem.
@@ -3191,10 +3206,10 @@ problem.
 
 ### Week 12 Self Asessment
 
-Take this time to work through the self-assessment on the Canvas page. 
+Take this time to work through the self-assessment on the Canvas page.
 
-* We will take the highest score of two attempts. 
-* No time limit. 
+* We will take the highest score of two attempts.
+* No time limit.
 * Due Sunday night.
 
 ---
@@ -3215,7 +3230,7 @@ Take this time to work through the self-assessment on the Canvas page.
   - If you want to be included, respond here: https://go.wisc.edu/cee17k
 1. Upcoming Deadlines
   * HW5 is posted
-1. Lightning Talks 
+1. Lightning Talks
   - Presentation order updated
   - Exercises will require you to attend and prepare questions for other teams
 
@@ -3270,7 +3285,7 @@ Sorting helps us recognize groups of documents with similar membership patterns.
 
 ---
 
-The sorting is based on leaf order in a clustering tree. 
+The sorting is based on leaf order in a clustering tree.
 
 .center[
 &lt;img src="figure/mini_memberships_tree.png"/&gt;
@@ -3475,7 +3490,7 @@ Please respond to the prompt on Canvas.
   - If you want to be included, respond here: https://go.wisc.edu/cee17k
 1. Upcoming Deadlines
   * HW5 is posted
-1. Lightning Talks 
+1. Lightning Talks
   - Presentation order updated
   - Exercises will require you to attend and prepare questions for other teams
 
@@ -3509,10 +3524,10 @@ Discuss one of the three prompts:
 
 ### Week 13 Self Asessment
 
-Take this time to work through the self-assessment on the Canvas page. 
+Take this time to work through the self-assessment on the Canvas page.
 
-* We will take the highest score of two attempts. 
-* No time limit. 
+* We will take the highest score of two attempts.
+* No time limit.
 * Due Sunday night.
 
 ---
@@ -3649,7 +3664,7 @@ Take this time to work through the self-assessment on the Canvas page.
 ### Review: Prediction and Visualization
 
 * Algorithms don't live in a vacuum. Visualization helps us understand models in context.
-* Visualization can make you a better machine learner 
+* Visualization can make you a better machine learner
   - Stanford class story
 * Going Further
   - [Distill Journal](https://distill.pub/)
