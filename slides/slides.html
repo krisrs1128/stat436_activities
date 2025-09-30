@@ -1524,22 +1524,32 @@ Take this time to work through the self-assessment on the Canvas page.
 
 1. Visualization Share
 1. Shiny App Tips
-1. In-Class Demo [5 - 1]
 1. In-Class Discussion [5 - 1]
-1. In-Class Exercise [5 - 1]
+1. In-Class Demo [5 - 1]
+1. Week 5 Think Tank
 
 ---
 
 ### Announcements
 
 1. Upcoming Deadlines
-  * HW2
-  * Project Milestone 2
+  - HW2
+  - Project Milestone 1
 1. Midterm (in-class)
   - Reviewing the online course notes.
   - Sketching solutions to problems from the exercise sheet.
   - Practice under time pressure.
 
+
+---
+
+### Example Projects
+
+Example portfolio submissions can be read here: https://krisrs1128.github.io/portfolio_site_436/
+
+These submissions asked creative questions of their data, designed aesthetically
+appealing visualizations, and avoided data science cliches ("actionable
+insights").
 
 ---
 
@@ -1566,13 +1576,12 @@ Rmarkdown document, unfortunately.
 
 ### Shiny Apps in Submissions
 
-To let us grade your Shiny apps within the problem sets, you have two options,
+To let us grade your Shiny apps within the problem sets, you need to give some
+evidence that it works. For example,
 
-1. Include a screen recording of your app along with the code you used to create
-it. You do not need to share the code as R scripts -- we will just read the code
-as it's embedded in the main write-up.
+1. Link to a screen recording of you using the app, or upload it directly to Canvas.
 
-1. You could try hosting your app on a public site.
+1. You could try hosting your app on a public site, like shinyapps.io.
 
 ---
 
@@ -1608,7 +1617,7 @@ of the code that others can easily give feedback on.
 ### In-Class Discussion [5 - 1]
 
 * Respond to the prompt on the Canvas Discussion 5 - 1 link.
-* Discuss and answer the prompts with your project group. Include your project group number next to your answer.
+* Discuss and answer the prompts with your neighbors. Include your names next to your answer.
 
 Discussion Links: https://go.wisc.edu/7fss4b
 
@@ -1643,7 +1652,7 @@ these in the next lecture).
 Please respond to the prompt on Canvas.
 
 .center[
-&lt;img src="figure/" width=700/&gt;
+&lt;img src="figure/cities_moving.png" width=700/&gt;
 ]
 
 ---
@@ -1653,7 +1662,7 @@ Please respond to the prompt on Canvas.
 1. Visualization Share
 1. In-Class Discussion [5 - 2]
 1. In-Class Demo [5 - 2]
-1. In-Class Exercise [5 - 2]
+1. Week 5 Self-Assessment
 
 ---
 
@@ -1662,29 +1671,12 @@ Please respond to the prompt on Canvas.
 1. We are done with the first course module (Fundamentals of Data
 Visualization). The remaining modules are focused on specific data types.
 1. Upcoming deadlines
-   - HW2
-   - Project Milestone 2
+  - HW2
+  - Project Milestone 1
 1. Midterm (in-class)
   - Reviewing the online course notes.
   - Sketching solutions to problems from the exercise sheet.
   - Practice under time pressure.
-
----
-
-### Example Projects
-
-Here are some past projects that were done very well:
-
-* [The British Museum](https://bedyvere.shinyapps.io/TheBritishMuseum/)
-* [TechQuake](https://farishazim02.shinyapps.io/G6_TechQuake_PM3/)
-* [Find Your College Match](https://krisrs1128.github.io/portfolio_site_436/education/2024/12/15/sidhuetal.html)
-* [COVID-19 Data Tracker](https://observablehq.com/@szhang577/stat-479-group-12)
-
-Example portfolio submissions can be read here: https://krisrs1128.github.io/portfolio_site_436/
-
-Notice how they (1) asked subtle questions of their data, (2) designed
-aesthetically appealing visualizations, and (3) avoided data science cliches
-("actionable insights").
 
 ---
 
@@ -1711,28 +1703,6 @@ Discussion Links: https://go.wisc.edu/7fss4b
 We will work through [NYC Rentals] part (c) in the exercise sheet.
 
 Live Demos: https://go.wisc.edu/83qv4x
-
----
-
-### In-Class Discussion [5 - 2] (Bonus)
-
-Can you improve this visualization?
-
-
-``` r
-coffee &lt;- read_csv("https://go.wisc.edu/b34tma")
-coffee_counts &lt;- count(coffee, `What is your age?`, `How many cups of coffee do you typically drink per day?`)
-
-ggplot(coffee_counts) +
-  geom_col(aes(
-    `What is your age?`,
-    n,
-    fill = `How many cups of coffee do you typically drink per day?`
-  )
-)
-```
-
-&lt;img src="slides_files/figure-html/unnamed-chunk-39-1.png" width="650" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -1988,7 +1958,7 @@ exclude: true
 Filter to `region == "global"`, and make a `gg_season` plot by month. Comment
 on the what you see.
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-42-1.png" width="650" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-41-1.png" width="650" style="display: block; margin: auto;" /&gt;
 
 ---
 exclude: true
@@ -2054,7 +2024,7 @@ ggplot(songs_wide) +
     theme(legend.key.width = unit(1.5, "cm"))
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-45-1.png" width="650" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-44-1.png" width="650" style="display: block; margin: auto;" /&gt;
 
 
 ---
