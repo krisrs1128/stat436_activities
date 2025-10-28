@@ -34,7 +34,7 @@ bird_summaries <- birds |>
         "AvgLength (cm)", "Number of images",
         "Number of eggs"),
         list(
-            MEAN = mean, 
+            MEAN = mean,
             STANDARD_DEVIATION = sd)
         )
     ) |>

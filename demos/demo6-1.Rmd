@@ -9,9 +9,10 @@ knitr::opts_chunk$set(warnings = FALSE, message = FALSE)
 ```
 
 ```{r}
+library(feasts)
+library(ggtime)
 library(tidyverse)
 library(tsibble)
-library(feasts)
 my_theme <- theme_classic() +
   theme(
     axis.text = element_text(size = 12),
@@ -29,16 +30,16 @@ project](https://observablehq.com/@wang2274/milestone-4-team-4). We will first
 quality check and structure the raw data. Then, we'll try answering some time
 series questions visually.
 
-a. The first few rows of the dataset are printed below. Write down 
+a. The first few rows of the dataset are printed below. Write down
 two interesting questions that you think the dataset could help to answer.
 Refer to at least one of the following vocabulary terms: trend, seasonality,
 autocorrelation, cross-correlation, cyclic behavior.
-    
+
 ```{r}
 carbon <- read_csv("https://go.wisc.edu/7qx7u1")
 head(carbon)
 ```
-  
+
 b. Build a `tsibble` object from the data above. Discuss why it can be
 useful to convert the original `data.frame` object to this new `tsibble`
 class.
