@@ -10,7 +10,7 @@ knitr::opts_chunk$set(warnings = FALSE, message = FALSE)
 
 ```{r}
 library(tidyverse)
-th <- theme_minimal() + 
+th <- theme_minimal() +
   theme(
     panel.grid.minor = element_blank(),
     panel.background = element_rect(fill = "#f7f7f7"),
@@ -34,7 +34,7 @@ along the journey given as separate columns (`x_0, y_0` is the origin of the
 trip and `x_15`, `y_15` is the destination). The second
 ([`long`](https://uwmadison.box.com/shared/static/098cjaetm8vy0mufq21mc8i9nue2rr2b.csv))
 format spreads each point of the journey into a separate row.
-    
+
 a. Filter the `long` form of the data down to trip `1389986517620000047` and
 plot its trajectory as a sequence of points.
 
@@ -61,7 +61,7 @@ trips |>
   coord_fixed()
 ```
 
-    
+
 b. We could hierarchically cluster rows in either the `wide` or the `long`
 format datasets. How would the interpretation of the results differ between the
 two approaches?
@@ -70,9 +70,6 @@ c. Compute a hierarchical clustering of the `wide` format data, using only the
 columns starting with `x` or `y` as features.
 
 ```{r}
-# test the code using a subset of data
-#hclust_res <- trips_wide |>
-#  filter(row_number() < 100)
 ```
 
 d. Cut the hierarchical clustering tree so that 8 clusters are produced.
@@ -80,14 +77,4 @@ Visualize the trajectories of the taxi trips either colored or faceted by their
 cluster.
 
 ```{r, fig.cap = "An example result for problem 3(c). A small amount of jitter has been added, to make the larger highways more clearly visible.", fig.width = 8, dev = "png", dpi = 1200}
-# ggplot(trips) +
-#   geom_point(
-#     aes(x, y, col = as.factor(cluster)),
-#     size = 0.1, alpha = 0.05, position = position_jitter(w = 0.0005, h = 0.0005)
-#   ) +
-#   scale_color_brewer(palette = "Set2") +
-#   coord_fixed() +
-#   guides(color = guide_legend(override.aes = list(size = 2, alpha = 1))) +
-#   labs(x = "Longitude", y = "Latitude", col = "Cluster")
 ```
-
