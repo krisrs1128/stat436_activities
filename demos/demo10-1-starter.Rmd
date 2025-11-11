@@ -10,7 +10,7 @@ knitr::opts_chunk$set(warnings = FALSE, message = FALSE)
 
 ```{r}
 library(tidyverse)
-library(embed)
+library(glue)
 library(tidymodels)
 th <- theme_minimal() +
     theme(
@@ -25,34 +25,25 @@ th <- theme_minimal() +
 theme_set(th)
 ```
 
-[Single-Cell Genomics]  In this problem, we will apply UMAP to a
-[dataset](https://uwmadison.box.com/shared/static/ai539s30rjsw5ke4vxbjrxjaiihq7edk.csv)
-of Peripheral Blood Mononuclear Cells (PBMC) released by 10X Genomics. The first
-column, `cell_tag`, gives an identifier for each cell in the dataset. All other
-columns are molecules that were detected in that cell. For example, CD74 is a
-molecule often found on the surface of T-cells.
-
-a. Define a tidymodels `recipe` that specifies that UMAP should be performed
-with the parameters `learn_rate = 0.1` and `neighbors = 5`. There is no need to
-normalize these data, as they have been normalized in advance using methods
-tailored to single-cell genomics data.
+[Olympics PCA - Continued] Let's study Olympics dataset from the previous
+problem. We'll apply PCA ourselves, compare alternative visual encodings, and
+clarify the impact of standardization. The code below loads the package.
 
 ```{r}
-pbmc <- read_csv("https://uwmadison.box.com/shared/static/ai539s30rjsw5ke4vxbjrxjaiihq7edk.csv")
-umap_rec <- recipe(~., data = pbmc) |>
-    update_role(cell_tag, new_role = "id") |>
-    step_umap(all_predictors(), learn_rate = 0.1, neighbors = 5)
-umap_prep <- prep(umap_rec)
+data(olympic, package = "ade4")
+head(olympic$tab)
 ```
 
-b. Compute the UMAP embeddings across cells. Color points in by their value of
-the GNLY molecule.
+a. Define a tidymodels recipe that normalizes all features and specifies that
+PCA should be performed.
 
-```{r}
-scores <- bake(umap_prep, pbmc) |>
-    left_join(pbmc)
-ggplot(scores) +
-    geom_point(aes(UMAP1, UMAP2, col = GNLY), size = 0.5, alpha = 0.4) +
-    scale_color_viridis_c() +
-    coord_fixed()
-```
+b. Plot and interpret the variance explained by each principal component.
+
+c. Visualize the scores associated with each athlete.
+
+d. Visualize the top 4 principal components.  Pick an athlete from part (c) and
+comment on their performance relative to the average decathlete for that year.
+
+e. Rerun the previous steps but with normalization replaced with only scaling
+(not centering). How do the results change? Which approach would you recommend
+and why?
