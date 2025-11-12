@@ -30,6 +30,7 @@ problem. We'll apply PCA ourselves, compare alternative visual encodings, and
 clarify the impact of standardization. The code below loads the package.
 
 ```{r}
+#install.packages("ade4")
 data(olympic, package = "ade4")
 head(olympic$tab)
 ```
@@ -37,12 +38,57 @@ head(olympic$tab)
 a. Define a tidymodels recipe that normalizes all features and specifies that
 PCA should be performed.
 
+```{r}
+# define all parts of the recipe
+rec <- recipe(~ ., olympic$tab) |>
+    step_normalize(all_predictors()) |>
+    step_pca(all_predictors())
+
+# run the PCA
+fit <- prep(rec)
+tidy(fit, 2)
+```
+
 b. Plot and interpret the variance explained by each principal component.
+
+```{r}
+prop_var <- tidy(fit, 2, type = "variance") |>
+    filter(terms == "percent variance")
+
+prop_var
+ggplot(prop_var) +
+    geom_col(aes(component, value))
+```
 
 c. Visualize the scores associated with each athlete.
 
+```{r}
+library(glue)
+x <- 123
+glue("the number is {x}")
+
+bake(fit, olympic$tab) |>
+    mutate(athlete = row_number()) |>
+    ggplot(aes(x = PC1, y = PC2, label = athlete)) +
+    geom_vline(xintercept = 0, color = "grey40", linewidth = 1.2) +
+    geom_hline(yintercept = 0, color = "grey40", linewidth = 1.2) +
+    geom_label(label.size = 0.1, alpha = 0.7) +
+    labs(
+        x = glue("PC1 [{round(prop_var$value[1], 2)}% variance]"),
+        y = glue("PC2 [{round(prop_var$value[2], 2)}% variance]")
+    )
+```
+
 d. Visualize the top 4 principal components.  Pick an athlete from part (c) and
 comment on their performance relative to the average decathlete for that year.
+
+```{r}
+tidy(fit, 2) |>
+    filter(component %in% glue("PC{1:4}")) |>
+    ggplot() +
+        geom_col(aes(value, terms)) +
+        facet_wrap(~ component)
+```
 
 e. Rerun the previous steps but with normalization replaced with only scaling
 (not centering). How do the results change? Which approach would you recommend
