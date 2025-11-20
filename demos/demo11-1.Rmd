@@ -14,11 +14,11 @@ library(tidyverse)
 library(topicmodels)
 library(tidytext)
 
-th <- theme_minimal() + 
+th <- theme_minimal() +
   theme(
     panel.grid.minor = element_blank(),
     panel.background = element_rect(fill = "#f7f7f7"),
-    panel.border = element_rect(fill = NA, color = "#0c0c0c", size = 0.6),
+    panel.border = element_rect(fill = NA, color = "#0c0c0c", linewidth = 0.6),
     axis.text = element_text(size = 14),
     axis.title = element_text(size = 16),
     legend.position = "bottom"
@@ -36,7 +36,7 @@ start to the end of the book, for example.
 paragraphs <- read_csv("https://uwmadison.box.com/shared/static/pz1lz301ufhbedzsj9iioee77r95xz4v.csv")
 paragraphs
 ```
-      
+
 a. Create a Document-Term Matrix containing word counts from across the same
 paragraphs. That is, the $i^{th}$ row of `dtm` should correspond to the $i^{th}$
 row of `paragraph`. Make sure to remove all stopwords.
