@@ -14,7 +14,7 @@ library(brms)
 library(ggdist)
 library(gganimate)
 
-th <- theme_minimal() + 
+th <- theme_minimal() +
   theme(
     panel.grid.minor = element_blank(),
     panel.background = element_rect(fill = "#f7f7f7"),
@@ -88,15 +88,6 @@ posterior |>
   arrange(tank)
 ```
 
-```{r}
-x
-
-ggplot(posterior) +
-  stat_pointinterval(aes(probability, reorder(tank, value), col = pred)) +
-  geom_point(data = x, aes(propsurv, tank, col = pred), shape = 1, size = 4) +
-  facet_wrap(size ~ density, scales = "free_y")
-```
-
 c. Create a version of the same figure that shows the full posterior
 densities, rather than simply their quantiles.
 
@@ -114,7 +105,7 @@ memorizing it, then we can have more faith in our model. Conversely, if
 important features are not reflected, then we may need to refine the model.
 The code below samples 4000 survival counts for each tank in the fitted
 model.
-    
+
 ```{r}
 y_sim <- posterior_predict(fit)
 
@@ -127,7 +118,7 @@ y_sim <- posterior_predict(fit) |>
 
 head(y_sim)
 ```
-  
+
 Create a static visualization that shows the variation associated with 10 of
 these 4000 hypothetical datasets.
 
@@ -139,7 +130,6 @@ p <- y_sim |>
   filter(.draw < 100) |>
   ggplot() +
   geom_point(aes(y_sim, reorder(tank, y_sim), fill = pred, col = pred)) +
-  facet_wrap(size ~ density, scale = "free") +
-  transition_time(.draw)
+  facet_wrap(size ~ density, scale = "free")
 #anim_save("animation.gif", p)
 ```

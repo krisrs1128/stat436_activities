@@ -14,7 +14,7 @@ library(brms)
 library(ggdist)
 library(gganimate)
 
-th <- theme_minimal() + 
+th <- theme_minimal() +
   theme(
     panel.grid.minor = element_blank(),
     panel.background = element_rect(fill = "#f7f7f7"),
@@ -51,7 +51,7 @@ ggplot(x) +
   geom_point(aes(propsurv, reorder(tank, propsurv), col = pred)) +
   facet_wrap(size ~ density, scales = "free_y")
 ```
-  
+
 b. The code below fits the following model, where $y_{i}$ represents the
 number of tadpoles that survive in tank $i$, $N_{i}$ is the initial
 tadpole density, and $p_{i}$ is the (unknown) survival probability.
@@ -109,11 +109,11 @@ memorizing it, then we can have more faith in our model. Conversely, if
 important features are not reflected, then we may need to refine the model.
 The code below samples 4000 survival counts for each tank in the fitted
 model.
-    
+
 ```{r}
 y_sim <- posterior_predict(fit)
 ```
-  
+
 Create a static visualization that shows the variation associated with 10 of
 these 4000 hypothetical datasets.
 

@@ -13,7 +13,7 @@ library(caret)
 library(DALEX)
 library(tidyverse)
 
-th <- theme_minimal() + 
+th <- theme_minimal() +
   theme(
     panel.grid.minor = element_blank(),
     panel.background = element_rect(fill = "#f7f7f7"),
@@ -31,7 +31,7 @@ it allows us to control for multiple other factors -- a direct plot of salary
 vs. gender could be criticized as not accounting for confounding variables. The
 code below trains a gradient boosting machine model on `BasePay` variable
 (yearly salary in USD), using all potential predictors in the dataset.
-    
+
 ```{r, warning = FALSE, message = FALSE}
 salary <- read_csv("https://github.com/krisrs1128/stat436_s24/raw/main/data/Glassdoor%20Gender%20Pay%20Gap.csv")
 
