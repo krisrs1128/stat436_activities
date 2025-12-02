@@ -57,13 +57,13 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
     selected <- reactiveVal(rep(FALSE, nrow(reviews)))
-    
+
     output$scatterplot <- renderPlot(p)
     observeEvent(input$plot_brush, {
         ix <- brushedPoints(scores, input$plot_brush, allRows = TRUE)$selected_
         selected(ix)
     })
-    
+
     output$reviews <- renderTable({
         reviews$Review[which(selected())]
     })

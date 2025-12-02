@@ -27,7 +27,7 @@ model_name <- "llama3.2:1b"
 reviews <- read_csv("https://github.com/krisrs1128/stat436_f24/raw/refs/heads/main/data/reviews.csv")
 reviews
 #z <- embed_text(reviews$Review, model = model_name)
-z <- read_csv("~/Downloads/z.csv")
+z <- read_csv("https://uwmadison.box.com/shared/static/8j0um7k06qbu0nozks1i2mwzmahn7cpw.csv")
 ```
 
     b. Create a two-dimensional UMAP scatterplot of the extracted embeddings.
@@ -35,16 +35,6 @@ z <- read_csv("~/Downloads/z.csv")
     capture qualities related to the overall review rating? Why or why not?
 
 ```{r}
-umap_recipe <- recipe(~ ., data = z) |>
-  step_umap(all_predictors())
-
-scores <- prep(umap_recipe) |>
-  juice() |>
-  bind_cols(reviews)
-
-ggplot(scores) +
-  geom_point(aes(UMAP1, UMAP2, col = factor(Rating)))
-
 ```
 
     c. Prepare an interactive visualization that allows the reader to brush
@@ -66,18 +56,11 @@ ui <- fluidPage(
 )
 
 server <- function(input, output) {
-    selected <- reactiveVal(rep(FALSE, nrow(scores)))    
-
+    selected <- reactiveVal(rep(FALSE, nrow(scores)))
     output$umapPlot <- renderPlot({
-        ggplot(scores) +
-            geom_point(aes(UMAP1, UMAP2, col = factor(Rating)))
     })
-    
+
     output$reviewTable <- renderTable({
-        browser()
-        brushed <- brushedPoints(scores, input$plot_brush, allRows = TRUE)$selected_
-        selected(brushed)
-        scores$Review[selected()]
     })
 }
 
