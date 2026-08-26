@@ -21,6 +21,7 @@
 
 1. Data management notes
 1. Example 2 - 1 (Plant growth)
+1. Discussion 2 - 1 (with and without AI)
 
 ## Week 2 - 2
 
@@ -30,19 +31,34 @@
 ## Week 3 - 1
 
 1. Small multiples notes
-1. Example 3 - 1 (NCAA Trends)
+1. Example 3 - 1 (Pokemon c - d)
+1. Discussion 3 - 1 (visualization redesign)
 
 ## Week 3 - 2
 
 1. Small multiples notes
-1. Exercise: Faceting rules of thumb
+1. Example 3 - 2 (NCAA Trends)
+1. Discussion 3 - 2 (what makes a visualization memorable)
 
 ## Week 4 - 1
 
 1. Interactivity foundations notes
 1. Discussion (when2meet)
-1.
+1. Example 4 - 1 (California Wildfires)
 
 ## Week 4 - 2
 
 1. Interactivity foundations notes
+1. Discussion (Miller's law)
+1. Example 4 - 2 (Extend the IMDB App)
+
+## Week 5 - 1
+
+1. Interactivity taxonomy notes
+1. Example 5 - 1 (Airbnb Rentals)
+1. Discussion 5 - 1 (munzner rules of thumb: eyes beat memory)
+
+## Week 5 - 2
+
+1. Interactivity taxonomy notes
+1. Example 5 - 2 (California Wildfires II)
