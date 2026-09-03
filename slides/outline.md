@@ -5,7 +5,6 @@
 1. Discussion: Visualization Values
 1. Introduction to Canvas materials, piazza, gradescope
 1. Introduction to quarto (R/ojs), pi, codespaces
-1. Exercise 0 - 1: Make a visualization
 
 ## Week 1 - 1
 
@@ -49,7 +48,7 @@
 ## Week 4 - 2
 
 1. Interactivity foundations notes
-1. Discussion (Miller's law)
+1. Discussion (Shneiderman's Golden Rules)
 1. Example 4 - 2 (Extend the IMDB App)
 
 ## Week 5 - 1
