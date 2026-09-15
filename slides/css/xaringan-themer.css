@@ -70,7 +70,7 @@ a, a > code {
   text-decoration: none;
 }
 .footnote {
-  
+
   position: absolute;
   bottom: 3em;
   padding-right: 4em;
@@ -82,7 +82,7 @@ a, a > code {
 .inverse {
   background-color: #09017F;
   color: #FFFFFF;
-  
+
 }
 .inverse h1, .inverse h2, .inverse h3 {
   color: #FFFFFF;
@@ -92,9 +92,9 @@ a, a > code {
 }
 .title-slide {
   background-color: #09017F;
-  
-  
-  
+
+
+
 }
 .title-slide .remark-slide-number {
   display: none;
@@ -192,6 +192,18 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   width: 100%;
 }
 
+.remark-slide-content.day-one-slide {
+  background-color: #E8E8E8;
+}
+
+.remark-slide-content.day-two-slide {
+    background-color: #e9e9e9
+}
+
+.remark-slide-content.day-four-slide {
+    background-color: #ebdabf
+}
+
 .my_title h1 h2 {
   font-family: 'Raleway';
 }
@@ -215,7 +227,7 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   width: 27%;
 }
 
-.my_title::before {    
+.my_title::before {
       content: "";
       background-image: url("https://uwmadison.box.com/shared/static/ebncvy25z4q6livvmzy9b10a1th5zt33.png");
       background-size: cover;
@@ -250,3 +262,8 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   opacity: 1;
   z-index: -1;
 }
+
+
+.remark-slide-content table tr:nth-child(2n) {
+    background-color: transparent;
+  }
