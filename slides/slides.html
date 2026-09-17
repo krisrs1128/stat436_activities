@@ -234,15 +234,42 @@ Music: Glass String Quartet #3 played by the Kronos Quartet
 
 1. Raising API key limit to $1.50 this month.
 
+1. Names
+
 ---
 
 ### Week 2 - 2
 
 1. Notes on Data Management
-1. Exercise 1 Review
+1. Exercise 2 experiment
 1. Discussion 2
 
 ---
+
+### Helpings agents with Mosaic
+
+Compared to writing ggplot2 code, many coding agents struggle with mosaic.
+
+- There are many fewer examples of mosaic than ggplot2 in the training data.
+
+- Mosaic runs in the browser, so error messages are harder for the model to catch.
+
+LLMs aren't magic, So if the relevant information isn't in the training data, we
+should provide it in the context.
+
+---
+
+### Helping agents with Mosaic
+
+- Copy and paste the boilerplate coordinator code into your notebook before
+writing the prompt. For some reason, models struggles a lot in writing these
+code blocks.
+
+- Copy and paste related examples from our course notes into your prompt.
+
+- Point the models to mosaic's llms.txt: https://idl.uw.edu/mosaic/llms.txt
+
+- As in ggplot, be very explicit about your graphical encodings.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
