@@ -204,6 +204,27 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
     background-color: #ebdabf
 }
 
+.remark-slide-content.day3-2-slide {
+    background-color: #030E1F
+}
+
+.remark-slide-content.day5-1-slide {
+    background-color: #000000
+}
+
+.remark-slide-content.day5-2-slide {
+    background-color: #CFDDF7
+}
+
+.remark-slide-content.day6-1-slide {
+    background-color: #FE430A;
+}
+
+.remark-slide-content.day6-2-slide {
+    background-color: #E6D6C9;
+}
+
+
 .my_title h1 h2 {
   font-family: 'Raleway';
 }
